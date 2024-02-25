@@ -74,7 +74,7 @@ const DogFacts = () => {
         <div className="mt-4">
           <h2 className="text-lg font-semibold">{dog.name}</h2>
           <img src={dog.imageLink} alt={dog.name} className="w-full max-w-sm" />
-          {/* Display other dog details here */}
+          {/* other dog details here */}
           <p>Grooming: {dog.grooming}</p>
           <p>Good with children: {dog.goodWithChildren ? 'Yes' : 'No'}</p>
           <p>Good with other dogs: {dog.goodWithOtherDogs ? 'Yes' : 'No'}</p>
