@@ -7,7 +7,7 @@ const DogFactsPage: React.FC = () => {
         <h1 className="text-5xl font-bold mb-6">Welcome to the Dog Facts Page</h1>
         <p className="text-lg text-gray-500 mb-8">Discover interesting facts about dogs and more!</p>
         <div className="space-x-4">
-          {/* links or buttons here, include as needed */}
+          {/* additional logic in DogFacts.tsx */}
         </div>
         <div className="mt-10">
           <DogFacts />

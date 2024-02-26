@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 interface DogInfo {
@@ -81,9 +82,18 @@ const DogFacts = () => {
             style={{ boxShadow: '0 8px 15px rgba(0, 0, 0, 0.1)' }}
           >
             <h2 className="text-lg font-semibold">{dog.name}</h2>
-            <img src={dog.imageLink} alt={dog.name} className="mx-auto w-48 h-auto rounded-full" // Rounded-full for bubbly image
-            />
-            {/* other dog details here */}
+           {dog.imageLink && (
+                       <div className="mx-auto w-48 h-auto rounded-full overflow-hidden">
+                         <Image
+                           src={dog.imageLink}
+                           alt={dog.name}
+                           width={192} // Set the width as required
+                           height={108} // Set the height as required
+                           objectFit="cover" // Adjust as needed
+                         />
+                       </div>
+                     )}
+
             <p>Grooming: {dog.grooming}</p>
             <p>Good with children: {dog.goodWithChildren ? 'Yes' : 'No'}</p>
             <p>Good with other dogs: {dog.goodWithOtherDogs ? 'Yes' : 'No'}</p>
