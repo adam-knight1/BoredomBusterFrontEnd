@@ -7,10 +7,10 @@ export default function Home() {
      {/* New Logo Added Here */}
           <div className="mt-10 mb-6">
             <Image
-              src="/boredom-buster-banner1.png"
+              src="/boredom-buster-banner2.png"
               alt="Boredom Buster Banner"
-              width={1300}
-              height={100}
+              width={750}
+              height={300}
               priority
             />
           </div>
