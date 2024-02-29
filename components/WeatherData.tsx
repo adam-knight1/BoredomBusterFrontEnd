@@ -100,9 +100,19 @@ const WeatherInfo = () => {
           className="mt-4 p-4 w-full max-w-lg bg-white rounded-3xl text-center"
           style={{ boxShadow: '0 8px 15px rgba(0, 0, 0, 0.1)' }}
         >
-          {/* Display weather information soon */}
-        </div>
-      )}
+              <h2 className="text-lg font-semibold">Weather Information</h2>
+              <p>Temperature: {weather.temp}°C</p>
+              <p>Wind Speed: {weather.windSpeed} km/h</p>
+              <p>Wind Direction: {weather.windDegrees}°</p>
+              <p>Humidity: {weather.humidity}%</p>
+              <p>Sunset: {new Date(weather.sunset * 1000).toLocaleTimeString()}</p>
+              <p>Minimum Temperature: {weather.minTemp}°C</p>
+              <p>Cloud Coverage: {weather.cloudPct}%</p>
+              <p>Feels Like: {weather.feelsLike}°C</p>
+              <p>Sunrise: {new Date(weather.sunrise * 1000).toLocaleTimeString()}</p>
+              <p>Maximum Temperature: {weather.maxTemp}°C</p>
+            </div>
+          )}
       <Link href="/" className="mt-6 text-indigo-800 hover:underline">Back to home</Link>
     </div>
     );
