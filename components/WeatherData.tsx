@@ -15,7 +15,7 @@ interface WeatherInfo {
 }
 
 const WeatherInfo = () => {
-  const [zipCode, setZipCode] = useState<string>('');
+  const [zip, setZip] = useState<string>('');
   const [city, setCity] = useState<string>('');
   const [state, setState] = useState<string>('');
   const [weather, setWeather] = useState<WeatherInfo | null>(null);
@@ -26,7 +26,7 @@ const WeatherInfo = () => {
    setLoading(true);
    setError(''); // Clear previous errors
    const backendBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8080';
-   const query = zipCode ? `zip=${encodeURIComponent(zipCode)}` : `city=${encodeURIComponent(city)}&state=${encodeURIComponent(state)}`;
+   const query = zip ? `zip=${encodeURIComponent(zip)}` : `city=${encodeURIComponent(city)}&state=${encodeURIComponent(state)}`;
    console.log(`Requesting weather data from: ${backendBaseUrl}/api/weather/forecast?${query}`);
 
    try {
@@ -62,8 +62,8 @@ const WeatherInfo = () => {
       <form onSubmit={handleSubmit} className="w-full max-w-md flex flex-col items-center gap-3">
         <input
           type="text"
-          value={zipCode}
-          onChange={(e) => setZipCode(e.target.value)}
+          value={zip}
+          onChange={(e) => setZip(e.target.value)}
           placeholder="Enter ZIP code"
           className="input input-bordered input-primary w-full rounded-full"
           style={{ padding: '10px', border: '1px solid #ccc', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}
