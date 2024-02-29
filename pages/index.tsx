@@ -9,7 +9,7 @@ export default function Home() {
             <Image
               src="/boredom-buster-banner2.png"
               alt="Boredom Buster Banner"
-              width={900}
+              width={750}
               height={300}
               priority
             />
