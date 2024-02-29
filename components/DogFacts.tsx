@@ -87,9 +87,9 @@ const DogFacts = () => {
                          <Image
                            src={dog.imageLink}
                            alt={dog.name}
-                           width={192} // Set the width as required
-                           height={108} // Set the height as required
-                           objectFit="cover" // Adjust as needed
+                           width={192}
+                           height={108}
+                           objectFit="cover"
                          />
                        </div>
                      )}
