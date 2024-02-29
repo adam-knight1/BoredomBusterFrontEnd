@@ -4,8 +4,19 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-secondary p-24 text-primary">
-      <h1 className="text-5xl font-bold mb-6">Welcome to the Boredom Buster App</h1>
-      <p className="text-lg text-gray-500 mb-8">Discover interesting facts about dogs, history, and more!</p>
+     {/* New Logo Added Here */}
+          <div className="mt-10 mb-6">
+            <Image
+              src="/boredom-buster-banner1.png"
+              alt="Boredom Buster Banner"
+              width={1300}
+              height={100}
+              priority
+            />
+          </div>
+      <h1 className="text-5xl font-bold mb-6">Welcome to Boredom Buster!</h1>
+      <p className="text-lg text-gray-500 mb-8">Unleash Fun: Explore History, Get Weather Updates, Challenge Trivia, and More!
+</p>
       <div className="space-x-4">
         <Link href="/dog-facts" className="inline-block rounded bg-accent px-6 py-3 text-lg font-semibold text-white transition duration-200 ease-in-out hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50">
           Dogs
