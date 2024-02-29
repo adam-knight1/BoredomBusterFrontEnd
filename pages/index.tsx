@@ -5,11 +5,11 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-secondary p-24 text-primary">
      {/* New Logo Added Here */}
-          <div className="mt-10 mb-6">
+          <div className="mt-10 mb-12">
             <Image
               src="/boredom-buster-banner2.png"
               alt="Boredom Buster Banner"
-              width={750}
+              width={900}
               height={300}
               priority
             />
