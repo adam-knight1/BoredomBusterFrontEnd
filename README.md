@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BoredomBuster Frontend
+
+The BoredomBuster frontend is a web application built using React and Next.js, providing a rich interactive UI for various entertaining and informative activities. It's designed to work with the BoredomBuster backend, delivering features like weather facts, history trivia, and more right to your browser.
 
 ## Getting Started
 
-First, run the development server:
+To get the frontend running locally:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Clone this repository
+- Run `npm install` to install all the required dependencies
+- Execute `npm run dev` to start the local development server
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will be available at [http://localhost:3000](http://localhost:3000). Visit this URL in your web browser to start exploring the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+In the project directory, you can run:
 
-## Learn More
+- `npm run dev` - Runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- `npm run build` - Builds the app for production to the `.next` folder.
+- `npm start` - Runs the app in production mode after building.
 
-To learn more about Next.js, take a look at the following resources:
+## API Keys
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The backend requires an API key from [API-Ninjas](https://api-ninjas.com/) to fetch data like weather, facts, and trivia questions. If you plan to run this project locally and use all its features, you will need to obtain a free api key.  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Once you have your API key, create a `.env` file in the root of the backend project and add your API key as follows:
 
-## Deploy on Vercel
+API_KEY=your_api_ninjas_key_here
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This `.env` file will be read by the backend to authenticate API requests.  You can also add the api key directly into
+service endpoints where the connection request properties are being set: connection.setRequestProperty("X-Api-key", "your API key here");
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
