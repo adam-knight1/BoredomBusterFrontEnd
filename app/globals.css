@@ -40,5 +40,6 @@ body {
   .custom-shadow {
     box-shadow: 0 10px 15px -3px rgba(var(--color-primary), 0.1), 0 4px 6px -2px rgba(var(--color-secondary), 0.05);
   }
+
 }
 
