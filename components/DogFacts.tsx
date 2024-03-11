@@ -103,7 +103,7 @@ const DogFacts = () => {
             <p>Life expectancy: {dog.minLifeExpectancy}-{dog.maxLifeExpectancy} years</p>
           </div>
         )}
-        <Link href="/" className="mt-6 text-indigo-800 hover:underline">Back to home</Link>
+        <Link href="/" className="mt-8 btn bg-accent hover:bg-red-700 text-white font-semibold rounded-full py-2 px-6">Back to home</Link>
       </div>
     );
 

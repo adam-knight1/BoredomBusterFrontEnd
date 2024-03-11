@@ -65,7 +65,15 @@ const ChatBot = () => {
     // Rendering the chat interface
     return (
         <div className="p-4 max-w-md mx-auto bg-white rounded-xl shadow-md">
-          <div className="mb-4 space-y-2 overflow-y-auto max-h-80 scroll-smooth" style={{ maxHeight: '50vh' }}>
+            <div className="mb-4 space-y-2 overflow-y-auto max-h-80 scroll-smooth" style={{ maxHeight: '50vh' }}>
+              {/* Map through messages and displaying them */}
+              {messages.map((msg, index) => (
+                <div key={index} className={`p-2 ${msg.role === 'user' ? 'text-right' : 'text-left'}`}>
+                  <span className={`inline-block rounded-lg p-2 ${msg.role === 'user' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}>
+                    {msg.content}
+                  </span>
+                </div>
+              ))}
 
           </div>
           <form onSubmit={(e) => { e.preventDefault(); sendMessage(); }} className="flex items-center">
@@ -81,7 +89,6 @@ const ChatBot = () => {
               type="submit"
               className="bg-blue-600 text-white rounded-r-full p-4 hover:bg-blue-700 focus:outline-none"
             >
-
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
               </svg>
@@ -90,6 +97,5 @@ const ChatBot = () => {
         </div>
       );
   };
-
 
 export default ChatBot;
