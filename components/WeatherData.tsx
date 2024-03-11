@@ -103,14 +103,14 @@ const WeatherInfo = () => {
                  <h2 className="text-lg font-semibold">Weather Information</h2>
                  <p>Temperature: {weather.temp}°C</p>
                  <p>Wind Speed: {weather.windSpeed} km/h</p>
-                 <p>Wind Direction: {weather.wind_degrees}°</p>
+                 <p>Wind Direction: {weather.windDegrees}°</p>
                  <p>Humidity: {weather.humidity}%</p>
                  <p>Sunset: {new Date(weather.sunset * 1000).toLocaleTimeString()}</p>
-                 <p>Minimum Temperature: {weather.min_temp}°C</p>
-                 <p>Cloud Coverage: {weather.cloud_pct}%</p>
-                 <p>Feels Like: {weather.feels_like}°C</p>
+                 <p>Minimum Temperature: {weather.minTemp}°C</p>
+                 <p>Cloud Coverage: {weather.cloudPct}%</p>
+                 <p>Feels Like: {weather.feelsLike}°C</p>
                  <p>Sunrise: {new Date(weather.sunrise * 1000).toLocaleTimeString()}</p>
-                 <p>Maximum Temperature: {weather.max_temp}°C</p>
+                 <p>Maximum Temperature: {weather.maxTemp}°C</p>
                </div>
              )}
 
