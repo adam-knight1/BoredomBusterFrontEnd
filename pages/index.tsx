@@ -15,11 +15,11 @@ export default function Home() {
             />
           </div>
       <h1 className="text-5xl font-bold mb-6">Welcome to Boredom Buster!</h1>
-      <p className="text-lg text-gray-500 mb-8">Unleash Fun: Explore History, Get Weather Updates, Challenge Trivia, and More!
+      <p className="text-lg text-gray-500 mb-8">Unleash Fun: Talk to AI, Get Weather Updates, Challenge Trivia, and More!
 </p>
       <div className="space-x-4">
-        <Link href="/dog-facts" className="inline-block rounded bg-accent px-6 py-3 text-lg font-semibold text-white transition duration-200 ease-in-out hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50">
-          Dogs
+        <Link href="/chat-bot" className="inline-block rounded bg-accent px-6 py-3 text-lg font-semibold text-white transition duration-200 ease-in-out hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50">
+          AI Personal Assistant
         </Link>
         <Link href="/dog-facts" className="inline-block rounded bg-accent px-6 py-3 text-lg font-semibold text-white transition duration-200 ease-in-out hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50">
           Trivia
@@ -30,7 +30,9 @@ export default function Home() {
         <Link href="/dog-facts" className="inline-block rounded bg-accent px-6 py-3 text-lg font-semibold text-white transition duration-200 ease-in-out hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50">
           History
         </Link>
-        {/* placeholder for more categories  */}
+        <Link href="dog-facts" className="inline-block rounded bg-accent px-6 py-3 text-lg font-semibold text-white transition duration-200 ease-in-out hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50">
+          Dogs
+        </Link>
       </div>
       <div className="mt-10">
         <Image
