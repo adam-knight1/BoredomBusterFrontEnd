@@ -16,5 +16,4 @@ const WeatherDataPage: React.FC = () => {
     );
   };
 
-
 export default WeatherDataPage;
