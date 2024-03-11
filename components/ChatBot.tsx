@@ -1,4 +1,4 @@
-// ChatBot.js
+// ChatBot.tsx
 // This component implements a chat interface where users can interact with an AI assistant.
 // It captures user input, sends it to the AI backend, and displays the AI's response.
 
