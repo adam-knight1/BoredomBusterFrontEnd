@@ -101,7 +101,9 @@ const TriviaGame = () => {
         </div>
       )}
 
-     <Link href="/" className="mt-6 text-indigo-800 hover:underline">Back to home</Link>
+<Link href="/">
+  <a className="mt-6 text-indigo-800 hover:underline">Back to home</a>
+</Link>
     </div>
   );
 };
