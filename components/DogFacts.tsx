@@ -31,7 +31,6 @@ const DogFacts = () => {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          // Include other headers if I need them
         },
       });
 
