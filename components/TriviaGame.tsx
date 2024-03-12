@@ -99,6 +99,8 @@ const TriviaGame = () => {
           <p>Score: {score}</p>
         </div>
       )}
+
+     <Link href="/" className="mt-6 text-indigo-800 hover:underline">Back to home</Link>
     </div>
   );
 };
