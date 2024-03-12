@@ -21,7 +21,7 @@ export default function Home() {
         <Link href="/chat-bot" className="inline-block rounded bg-accent px-6 py-3 text-lg font-semibold text-white transition duration-200 ease-in-out hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50">
           AI Personal Assistant
         </Link>
-        <Link href="/dog-facts" className="inline-block rounded bg-accent px-6 py-3 text-lg font-semibold text-white transition duration-200 ease-in-out hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50">
+        <Link href="/trivia-data" className="inline-block rounded bg-accent px-6 py-3 text-lg font-semibold text-white transition duration-200 ease-in-out hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50">
           Trivia
         </Link>
         <Link href="/weather-data" className="inline-block rounded bg-accent px-6 py-3 text-lg font-semibold text-white transition duration-200 ease-in-out hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50">
