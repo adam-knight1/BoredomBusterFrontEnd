@@ -39,9 +39,11 @@ const DogFacts = () => {
       }
 
       const data: DogInfo = await response.json();
+      if (dog){
       console.log(data); //logging to determine issue with good with children/dogs
       console.log(dog.goodWithChildren)
-      console.log(dog.goodWithOtherDogs)
+      console.log(dog.goodWithOtherDogs) //adding this conditional to overcome typescript null check requirements
+      }
       setDog(data);
     } catch (error: any) {
       console.error(error);
