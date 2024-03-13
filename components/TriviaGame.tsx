@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 const categories = ["music", "mathematics", "geography", "scienceNature", "general", "entertainment", "toysGames", "peoplePlaces"];
 
@@ -13,12 +14,15 @@ const TriviaGame = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
 
+
+    //verifying the category select and constructing backend URL using env variable for deployed FE (or 8080 for development
   const fetchTriviaQuestion = async () => {
     if (selectedCategory === '') return;
     setLoading(true);
     setError('');
     const backendBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8080';  //set env in vercel, this will make local dev easier
     try {
+    //fetching the trivia from the 3rd party api
       const response = await fetch(`${backendBaseUrl}/api/trivia/question?category=${encodeURIComponent(selectedCategory)}`);
       if (!response.ok) {
         throw new Error(`An error occurred: ${response.statusText}`);
@@ -34,7 +38,7 @@ const TriviaGame = () => {
       setLoading(false);
     }
   };
-
+    //set up game logic for new round at category select
   const handleCategorySelect = (category: string) => {
     setSelectedCategory(category);
     setScore(0);
@@ -44,7 +48,7 @@ const TriviaGame = () => {
     setCorrectAnswer('');
     fetchTriviaQuestion();
   };
-
+    //logic for incrementing game value.  Need to debug toLowerCase as it doesn't seem to be working currently.
   const handleSubmitAnswer = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (userAnswer.trim().toLowerCase() === correctAnswer.toLowerCase()) { //not working as of current 3.11
@@ -75,6 +79,7 @@ const TriviaGame = () => {
       </div>
       {/* Q and A form here */}
       {question && (
+      //submit logic
         <form onSubmit={handleSubmitAnswer} className="w-full max-w-md flex flex-col items-center gap-3">
           <div className="mb-4">
             <p className="text-xl">{question}</p>
@@ -99,7 +104,9 @@ const TriviaGame = () => {
           <p>Score: {score}</p>
         </div>
       )}
-    </div>
+
+<Link href="/" className="mt-6 text-indigo-800 hover:underline">Back to home</Link>
+   </div>
   );
 };
 

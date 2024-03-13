@@ -117,7 +117,6 @@ const WeatherInfo = () => {
       <Link href="/" className="mt-6 text-indigo-800 hover:underline">Back to home</Link>
     </div>
     );
-
       };
 
     export default WeatherInfo;
