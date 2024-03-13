@@ -3,15 +3,15 @@ import Link from 'next/link';
 
 interface WeatherInfo {
   wind_speed: number;
-  windDegrees: number;
+  wind_degrees: number;
   temp: number;
   humidity: number;
   sunset: number;
-  minTemp: number;
-  cloudPct: number;
-  feelsLike: number;
+  min_temp: number;
+  cloud_pct: number;
+  feels_like: number;
   sunrise: number;
-  maxTemp: number;
+  max_temp: number;
 }
 
 const WeatherInfo = () => {
@@ -103,14 +103,14 @@ const WeatherInfo = () => {
                  <h2 className="text-lg font-semibold">Weather Information</h2>
                  <p>Temperature: {weather.temp}°C</p>
                  <p>Wind Speed: {weather.wind_speed} km/h</p>
-                 <p>Wind Direction: {weather.windDegrees}°</p>
+                 <p>Wind Direction: {weather.wind_degrees}°</p>
                  <p>Humidity: {weather.humidity}%</p>
                  <p>Sunset: {new Date(weather.sunset * 1000).toLocaleTimeString()}</p>
-                 <p>Minimum Temperature: {weather.minTemp}°C</p>
-                 <p>Cloud Coverage: {weather.cloudPct}%</p>
-                 <p>Feels Like: {weather.feelsLike}°C</p>
+                 <p>Minimum Temperature: {weather.min_temp}°C</p>
+                 <p>Cloud Coverage: {weather.cloud_pct}%</p>
+                 <p>Feels Like: {weather.feels_like}°C</p>
                  <p>Sunrise: {new Date(weather.sunrise * 1000).toLocaleTimeString()}</p>
-                 <p>Maximum Temperature: {weather.maxTemp}°C</p>
+                 <p>Maximum Temperature: {weather.max_temp}°C</p>
                </div>
              )}
 
