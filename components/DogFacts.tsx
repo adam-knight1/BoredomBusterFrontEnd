@@ -108,7 +108,6 @@ const DogFacts = () => {
         <Link href="/" className="mt-8 btn bg-accent hover:bg-red-700 text-white font-semibold rounded-full py-2 px-6">Back to home</Link>
       </div>
     );
-
   };
 
 export default DogFacts;
