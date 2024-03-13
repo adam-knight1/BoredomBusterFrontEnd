@@ -94,8 +94,8 @@ const DogFacts = () => {
                      )}
 
             <p>Grooming: {dog.grooming}</p>
-            <p>Good with children: {dog.goodWithChildren ? 'Yes' : 'No'}</p>
-            <p>Good with other dogs: {dog.goodWithOtherDogs ? 'Yes' : 'No'}</p>
+            <p>Good with children: {dog.goodWithChildren > 1 ? 'Yes' : 'No'}</p>
+            <p>Good with other dogs: {dog.goodWithOtherDogs > 1 ? 'Yes' : 'No'}</p>
             <p>Shedding level: {dog.shedding}</p>
             <p>Energy level: {dog.energy}</p>
             <p>Trainability: {dog.trainability}</p>
