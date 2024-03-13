@@ -3,14 +3,14 @@ import Link from 'next/link';
 
 const categories = [
 //creating an array that has the required api name and the grammatically correct display name for the UI
-{ apiName: "music", displayName: "Music"}
-{ apiName: "mathematics", displayName: "Mathematics"}
-{ apiName: "geography" , displayName: "Geography"}
-{ apiName: "scienceNature" , displayName: "Science and Nature"}
-{ apiName: "general" , displayName: "General Trivia"}
-{ apiName: "entertainment" , displayName: "Entertainment"}
-{ apiName: "toysGames" , displayName: "Toys and Games"}
-{ apiName: "peoplePlaces" , displayName: "People and Places"}
+{ apiName: "music", displayName: "Music"},
+{ apiName: "mathematics", displayName: "Mathematics"},
+{ apiName: "geography" , displayName: "Geography"},
+{ apiName: "scienceNature" , displayName: "Science and Nature"},
+{ apiName: "general" , displayName: "General Trivia"},
+{ apiName: "entertainment" , displayName: "Entertainment"},
+{ apiName: "toysGames" , displayName: "Toys and Games"},
+{ apiName: "peoplePlaces" , displayName: "People and Places"},
 ];
 
 //similar to dogFacts implementation, should work as is for now, needs a few tweaks like not being so strict with answer format
