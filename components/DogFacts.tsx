@@ -39,6 +39,7 @@ const DogFacts = () => {
       }
 
       const data: DogInfo = await response.json();
+      console.log(data); //logging to determine issue with good with children/dogs
       setDog(data);
     } catch (error: any) {
       console.error(error);
@@ -94,8 +95,8 @@ const DogFacts = () => {
                      )}
 
             <p>Grooming: {dog.grooming}</p>
-            <p>Good with children: {dog.goodWithChildren > 1 ? 'Yes' : 'No'}</p>
-            <p>Good with other dogs: {dog.goodWithOtherDogs > 1 ? 'Yes' : 'No'}</p>
+            <p>Good with children: {dog.goodWithChildren > 5 ? 'Yes' : 'No'}</p>
+            <p>Good with other dogs: {dog.goodWithOtherDogs > 5 ? 'Yes' : 'No'}</p>
             <p>Shedding level: {dog.shedding}</p>
             <p>Energy level: {dog.energy}</p>
             <p>Trainability: {dog.trainability}</p>
