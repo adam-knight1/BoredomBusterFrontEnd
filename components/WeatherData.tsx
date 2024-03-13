@@ -101,7 +101,8 @@ const WeatherInfo = () => {
           style={{ boxShadow: '0 8px 15px rgba(0, 0, 0, 0.1)' }}
         >
                  <h2 className="text-lg font-semibold">
-                 Weather Information For {zip ? `ZIP Code: ${zip}` : `${city}, ${state}`}
+                 Weather Information For
+                 {zip ? `ZIP Code: ${zip}` : `${city}, ${state}`}
                  </h2>
                  <p>Temperature: {weather.temp}°C</p>
                  <p>Wind Speed: {weather.wind_speed} km/h</p>
