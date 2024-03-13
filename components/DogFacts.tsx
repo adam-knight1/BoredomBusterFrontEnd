@@ -54,6 +54,9 @@ const DogFacts = () => {
     fetchDogInfo();
   };
 
+  console.log('Good with children:', dog.goodWithChildren);
+  console.log('Good with other dogs:', dog.goodWithOtherDogs);
+
     return (
       <div className="container mx-auto p-4 flex flex-col items-center">
         <h1 className="text-4xl font-bold text-center mb-6">Dog Facts</h1>
@@ -93,6 +96,8 @@ const DogFacts = () => {
                          />
                        </div>
                      )}
+
+
 
             <p>Grooming: {dog.grooming}</p>
             <p>Good with children: {dog.goodWithChildren >= 3 ? 'Yes' : 'No'}</p>
