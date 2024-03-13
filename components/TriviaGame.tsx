@@ -1,7 +1,18 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-const categories = ["music", "mathematics", "geography", "scienceNature", "general", "entertainment", "toysGames", "peoplePlaces"];
+const categories = [
+//creating an array that has the required api name and the grammatically correct display name for the UI
+{ apiName: "music", displayName: "Music"}
+{ apiName: "mathematics", displayName: "Mathematics"}
+{ apiName: "" , displayName: ""}
+{ apiName: "" , displayName: ""}
+{ apiName: "" , displayName: ""}
+{ apiName: "" , displayName: ""}
+
+]
+
+["music", "mathematics", "geography", "scienceNature", "general", "entertainment", "toysGames", "peoplePlaces"];
 
 //similar to dogFacts implementation, should work as is for now, needs a few tweaks like not being so strict with answer format
 const TriviaGame = () => {
