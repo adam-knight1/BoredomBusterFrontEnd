@@ -11,9 +11,7 @@ const categories = [
 { apiName: "entertainment" , displayName: "Entertainment"}
 { apiName: "toysGames" , displayName: "Toys and Games"}
 { apiName: "peoplePlaces" , displayName: "People and Places"}
-]
-
-["music", "mathematics", "geography", "scienceNature", "general", "entertainment", "toysGames", "peoplePlaces"];
+];
 
 //similar to dogFacts implementation, should work as is for now, needs a few tweaks like not being so strict with answer format
 const TriviaGame = () => {
