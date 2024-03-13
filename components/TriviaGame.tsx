@@ -50,7 +50,7 @@ const TriviaGame = () => {
   };
     //set up game logic for new round at category select
   const handleCategorySelect = (apiName: string) => {
-    setSelectedCategory(apiName); //or is this category?
+    setSelectedCategory(apiName);
     setScore(0);
     setQuestionCount(0);
     setUserAnswer('');
@@ -69,7 +69,7 @@ const TriviaGame = () => {
     }
     setUserAnswer('');
     if (questionCount < 10) {
-      fetchTriviaQuestion();
+      fetchTriviaQuestion(selectedCategory);
     } else {
       alert(`Game over! Your score was: ${score}`);
       setSelectedCategory(''); // Reset the category to allow for another choice, it allows mid game as well if you click twice
