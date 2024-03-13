@@ -26,14 +26,14 @@ const TriviaGame = () => {
 
 
     //verifying the category select and constructing backend URL using env variable for deployed FE (or 8080 for development
-  const fetchTriviaQuestion = async () => {
+  const fetchTriviaQuestion = async (apiName:string) => {
     if (selectedCategory === '') return;
     setLoading(true);
     setError('');
     const backendBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8080';  //set env in vercel, this will make local dev easier
     try {
     //fetching the trivia from the 3rd party api
-      const response = await fetch(`${backendBaseUrl}/api/trivia/question?category=${encodeURIComponent(selectedCategory)}`);
+      const response = await fetch(`${backendBaseUrl}/api/trivia/question?category=${encodeURIComponent(apiName)}`);
       if (!response.ok) {
         throw new Error(`An error occurred: ${response.statusText}`);
       }
