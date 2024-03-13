@@ -7,13 +7,13 @@ interface DogInfo {
   name: string;
   imageLink: string;
   grooming: string;
-  goodWithChildren: number;
-  goodWithOtherDogs: number;
+  good_with_children: number;
+  good_with_other_dogs: number;
   shedding: number;
   energy: number;
   trainability: number;
-  minLifeExpectancy: number;
-  maxLifeExpectancy: number;
+  min_life_expectancy: number; //fixed these two fields to reflect what is returned in dog data object
+  max_life_expectancy: number;
 }
 
 const DogFacts = () => {
@@ -99,12 +99,12 @@ const DogFacts = () => {
                      )}
 
             <p>Grooming: {dog.grooming}</p>
-            <p>Good with children: {dog.goodWithChildren >= 3 ? 'Yes' : 'No'}</p>
-            <p>Good with other dogs: {dog.goodWithOtherDogs >= 3 ? 'Yes' : 'No'}</p>
+            <p>Good with children: {dog.good_with_children >= 3 ? 'Yes' : 'No'}</p>
+            <p>Good with other dogs: {dog.good_with_other_dogs >= 3 ? 'Yes' : 'No'}</p>
             <p>Shedding level: {dog.shedding}</p>
             <p>Energy level: {dog.energy}</p>
             <p>Trainability: {dog.trainability}</p>
-            <p>Life expectancy: {dog.minLifeExpectancy} years</p>
+            <p>Life expectancy: {data.min_life_expectancy}-{data.max_life_expectancy} years</p>
           </div>
         )}
         <Link href="/" className="mt-8 btn bg-accent hover:bg-red-700 text-white font-semibold rounded-full py-2 px-6">Back to home</Link>
