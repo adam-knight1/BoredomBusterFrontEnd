@@ -100,7 +100,10 @@ const WeatherInfo = () => {
           className="mt-4 p-4 w-full max-w-lg bg-white rounded-3xl text-center"
           style={{ boxShadow: '0 8px 15px rgba(0, 0, 0, 0.1)' }}
         >
-                 <h2 className="text-lg font-semibold">Weather Information</h2>
+                 <h2 className="text-lg font-semibold">
+                 Weather Information For {zip ? `ZIP Code: ${zip}` : `${city}, ${state}`}
+                 {/*added to reflect entered location data on render*/}
+                 </h2>
                  <p>Temperature: {weather.temp}°C</p>
                  <p>Wind Speed: {weather.wind_speed} km/h</p>
                  <p>Wind Direction: {weather.wind_degrees}°</p>
