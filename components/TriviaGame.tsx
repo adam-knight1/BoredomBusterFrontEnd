@@ -51,14 +51,14 @@ const TriviaGame = () => {
     }
   };
     //set up game logic for new round at category select
-  const handleCategorySelect = (category: string) => {
+  const handleCategorySelect = (apiName: string) => {
     setSelectedCategory(category);
     setScore(0);
     setQuestionCount(0);
     setUserAnswer('');
     setQuestion('');
     setCorrectAnswer('');
-    fetchTriviaQuestion();
+    fetchTriviaQuestion(apiName);
   };
     //logic for incrementing game value.  Need to debug toLowerCase as it doesn't seem to be working currently.
   const handleSubmitAnswer = (e: React.FormEvent<HTMLFormElement>) => {
@@ -83,9 +83,9 @@ const TriviaGame = () => {
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 justify-center mb-6">
       {/* category selection buttons */}
         {categories.map((category) => (
-          <button key={category} onClick={() => handleCategorySelect(category)}
+          <button key={category.apiName} onClick={() => handleCategorySelect(category.apiName)}
             className="btn bg-accent hover:bg-red-700 text-white font-semibold rounded-full py-2 px-6">
-            {category}
+            {category.displayName}
           </button>
         ))}
       </div>
