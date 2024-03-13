@@ -40,6 +40,8 @@ const DogFacts = () => {
 
       const data: DogInfo = await response.json();
       console.log(data); //logging to determine issue with good with children/dogs
+      console.log(dog.goodWithChildren)
+      console.log(dog.goodWithOtherDogs)
       setDog(data);
     } catch (error: any) {
       console.error(error);
