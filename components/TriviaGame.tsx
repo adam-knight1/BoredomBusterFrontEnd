@@ -5,11 +5,12 @@ const categories = [
 //creating an array that has the required api name and the grammatically correct display name for the UI
 { apiName: "music", displayName: "Music"}
 { apiName: "mathematics", displayName: "Mathematics"}
-{ apiName: "" , displayName: ""}
-{ apiName: "" , displayName: ""}
-{ apiName: "" , displayName: ""}
-{ apiName: "" , displayName: ""}
-
+{ apiName: "geography" , displayName: "Geography"}
+{ apiName: "scienceNature" , displayName: "Science and Nature"}
+{ apiName: "general" , displayName: "General Trivia"}
+{ apiName: "entertainment" , displayName: "Entertainment"}
+{ apiName: "toysGames" , displayName: "Toys and Games"}
+{ apiName: "peoplePlaces" , displayName: "People and Places"}
 ]
 
 ["music", "mathematics", "geography", "scienceNature", "general", "entertainment", "toysGames", "peoplePlaces"];
