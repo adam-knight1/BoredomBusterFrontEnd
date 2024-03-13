@@ -102,7 +102,7 @@ const WeatherInfo = () => {
         >
                  <h2 className="text-lg font-semibold">
                  Weather Information:
-                 {zip ? ` ZIP Code: ${zip}` : `${city}, ${state}`}
+                 {zip ? ` ZIP Code: ${zip}` : ` ${city}, ${state}`}
                  </h2>
                  <p>Temperature: {weather.temp}°C</p>
                  <p>Wind Speed: {weather.wind_speed} km/h</p>
