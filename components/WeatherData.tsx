@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 interface WeatherInfo {
-  windSpeed: number;
+  wind_speed: number;
   windDegrees: number;
   temp: number;
   humidity: number;
@@ -102,7 +102,7 @@ const WeatherInfo = () => {
         >
                  <h2 className="text-lg font-semibold">Weather Information</h2>
                  <p>Temperature: {weather.temp}°C</p>
-                 <p>Wind Speed: {weather.windSpeed} km/h</p>
+                 <p>Wind Speed: {weather.wind_speed} km/h</p>
                  <p>Wind Direction: {weather.windDegrees}°</p>
                  <p>Humidity: {weather.humidity}%</p>
                  <p>Sunset: {new Date(weather.sunset * 1000).toLocaleTimeString()}</p>
