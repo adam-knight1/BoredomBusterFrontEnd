@@ -50,7 +50,7 @@ const TriviaGame = () => {
   };
     //set up game logic for new round at category select
   const handleCategorySelect = (apiName: string) => {
-    setSelectedCategory(category);
+    setSelectedCategory(apiName); //or is this category?
     setScore(0);
     setQuestionCount(0);
     setUserAnswer('');
