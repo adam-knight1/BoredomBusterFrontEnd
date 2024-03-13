@@ -67,12 +67,12 @@ const TriviaGame = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 flex flex-col items-center">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 justify-center mb-6">
       {/* category selection buttons */}
       <div className="flex justify-center mb-6">
         {categories.map((category) => (
           <button key={category} onClick={() => handleCategorySelect(category)}
-            className="btn mx-1 bg-accent hover:bg-red-700 text-white font-semibold rounded-full py-2 px-6">
+            className="btn bg-accent hover:bg-red-700 text-white font-semibold rounded-full py-2 px-6">
             {category}
           </button>
         ))}
