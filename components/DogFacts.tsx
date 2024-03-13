@@ -99,7 +99,7 @@ const DogFacts = () => {
             <p>Shedding level: {dog.shedding}</p>
             <p>Energy level: {dog.energy}</p>
             <p>Trainability: {dog.trainability}</p>
-            <p>Life expectancy: {dog.minLifeExpectancy}-{dog.maxLifeExpectancy} years</p>
+            <p>Life expectancy: {dog.minLifeExpectancy ? dog.minLifeExpectancy : 'Unknown'}-{dog.maxLifeExpectancy ? dog.maxLifeExpectancy : 'Unknown'} years</p>
           </div>
         )}
         <Link href="/" className="mt-8 btn bg-accent hover:bg-red-700 text-white font-semibold rounded-full py-2 px-6">Back to home</Link>
