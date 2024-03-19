@@ -16,6 +16,5 @@ const DogFactsPage: React.FC = () => {
     );
   };
 
-
 export default DogFactsPage;
 

@@ -35,7 +35,7 @@ const ChessGame: React.FC = () => {
         } catch (error) {
           console.error('Error starting new game:', error);
         }
-      }, [startEngine]);
+      }, [startEngine, apiUrl]);
 
   const handleMove = async (sourceSquare, targetSquare) => {
     // Make the move on the front end first
