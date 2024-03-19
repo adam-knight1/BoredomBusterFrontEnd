@@ -37,7 +37,7 @@ const ChessGame: React.FC = () => {
         }
       }, [startEngine, apiUrl]);
 
-  const handleMove = async (sourceSquare, targetSquare) => {
+    const handleMove = async (sourceSquare: string, targetSquare: string) => {
     // Make the move on the front end first
     const move = game.move({ from: sourceSquare, to: targetSquare, promotion: 'q' });
 
