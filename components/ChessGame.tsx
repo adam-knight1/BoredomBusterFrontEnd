@@ -11,6 +11,12 @@ const ChessGame: React.FC = () => {
   const [game, setGame] = useState<ChessInstance>(new Chess());
   const [position, setPosition] = useState('start');
 
+    useEffect(() => {
+      startNewGame();
+    }, []);
+
+
+
   const handleMove = async (sourceSquare, targetSquare) => {
     // Make the move on the front end first
     const move = game.move({ from: sourceSquare, to: targetSquare, promotion: 'q' });
@@ -55,6 +61,23 @@ const ChessGame: React.FC = () => {
     }
   };
 
+    const startNewGame = async () => {
+      await startEngine(); // Ensure the engine is started
+      try {
+        const response = await fetch(`${apiUrl}/api/chess/startNewGame`, {
+          method: 'POST',
+        });
+        if (!response.ok) {
+          throw new Error('Failed to start new game');
+        }
+        console.log('New game started');
+        setGame(new Chess()); // Reset the game state
+        setPosition('start'); // Reset the board position
+      } catch (error) {
+        console.error('Error starting new game:', error);
+      }
+    };
+
   return (
   <div>
     <Chessboard
@@ -64,8 +87,7 @@ const ChessGame: React.FC = () => {
         handleMove(sourceSquare, targetSquare);
       }}
     />
-    <Link href="/" className="mt-6 text-indigo-800 hover:underline">Back to home</Link>
-    </div>
+<Link href="/" className="mt-8 btn bg-accent hover:bg-red-700 text-white font-semibold rounded-full py-2 px-6">Back to home</Link>    </div>
   );
 };
 
