@@ -20,7 +20,7 @@ const ChessGame: React.FC = () => {
         }
         }, [apiUrl]);
 
-  const startNewGame = useCallback(async () => {
+  /* const startNewGame = useCallback(async () => {
         await startEngine(); // Ensure the engine is started
         try {
           const response = await fetch(`${apiUrl}/api/chess/startNewGame`, {
@@ -35,7 +35,7 @@ const ChessGame: React.FC = () => {
         } catch (error) {
           console.error('Error starting new game:', error);
         }
-      }, [startEngine, apiUrl]);
+      }, [startEngine, apiUrl]); */
 
   const handleMove = async (sourceSquare, targetSquare) => {
     // Make the move on the front end first
@@ -81,9 +81,9 @@ const ChessGame: React.FC = () => {
     }
   };
 
-   useEffect(() => {
+  /*  useEffect(() => {
         startNewGame();
-      }, [startNewGame]);
+      }, [startNewGame]); */
 
  return (
        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
