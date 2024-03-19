@@ -12,13 +12,13 @@ const ChessGame: React.FC = () => {
   const [position, setPosition] = useState('start');
   const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8080';
 
-  const startEngine = async () => {
+    const startEngine = useCallback(async () => {
         try {
-          await fetch(`${apiUrl}/api/chess/start`, { method: 'POST' });
+        await fetch(`${apiUrl}/api/chess/start`, { method: 'POST' });
         } catch (error) {
-          console.error('Error starting engine:', error);
+        console.error('Error starting engine:', error);
         }
-      };
+        }, [apiUrl]);
 
   const startNewGame = useCallback(async () => {
         await startEngine(); // Ensure the engine is started
