@@ -12,7 +12,6 @@ const ChessGame: React.FC = () => {
   const [position, setPosition] = useState('start');
   const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8080';
 
-
   const startEngine = async () => {
         try {
           await fetch(`${apiUrl}/api/chess/start`, { method: 'POST' });
@@ -36,7 +35,7 @@ const ChessGame: React.FC = () => {
         } catch (error) {
           console.error('Error starting new game:', error);
         }
-      };
+      }, [startEngine]);
 
   const handleMove = async (sourceSquare, targetSquare) => {
     // Make the move on the front end first
@@ -101,7 +100,6 @@ const ChessGame: React.FC = () => {
          <Link href="/" className="btn-back mt-8 btn bg-accent hover:bg-red-700 text-white font-semibold rounded-full py-2 px-6">Back to home</Link>
        </div>
      );
-
  };
 
 export default ChessGame;
