@@ -10,7 +10,7 @@ const Chessboard = dynamic(() => import('chessboardjsx'), { ssr: false });
 const ChessGame: React.FC = () => {
   const [game, setGame] = useState<ChessInstance>(new Chess());
   const [position, setPosition] = useState('start');
-  const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8080'}/api/chess/move`;
+  const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8080';
 
     useEffect(() => {
       startNewGame();
@@ -60,7 +60,13 @@ const ChessGame: React.FC = () => {
     }
   };
 
-
+    const startEngine = async () => {
+      try {
+        await fetch(`${apiUrl}/api/chess/start`, { method: 'POST' });
+      } catch (error) {
+        console.error('Error starting engine:', error);
+      }
+    };
 
     const startNewGame = async () => {
       await startEngine(); // Ensure the engine is started
@@ -80,18 +86,21 @@ const ChessGame: React.FC = () => {
     };
 
  return (
-     <div>
-       <button onClick={startNewGame} className="btn-start">Start New Game</button>
-       <Chessboard
-         width={320}
-         position={position}
-         onDrop={({ sourceSquare, targetSquare }) => {
-           handleMove(sourceSquare, targetSquare);
-         }}
-       />
-       <Link href="/" className="mt-6 text-indigo-800 hover:underline">Back to home</Link>
-     </div>
-   );
+       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+         <button onClick={startNewGame} className="btn-start mt-8 btn bg-accent hover:bg-red-700 text-white font-semibold rounded-full py-2 px-6">Start New Game</button>
+         <div style={{ margin: '20px' }}>
+           <Chessboard
+             width={320}
+             position={position}
+             onDrop={({ sourceSquare, targetSquare }) => {
+               handleMove(sourceSquare, targetSquare);
+             }}
+           />
+         </div>
+         <Link href="/" className="btn-back mt-8 btn bg-accent hover:bg-red-700 text-white font-semibold rounded-full py-2 px-6">Back to home</Link>
+       </div>
+     );
+
  };
 
 export default ChessGame;
