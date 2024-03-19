@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { Chess } from 'chess.js'
@@ -10,12 +10,11 @@ const Chessboard = dynamic(() => import('chessboardjsx'), { ssr: false });
 const ChessGame: React.FC = () => {
   const [game, setGame] = useState<ChessInstance>(new Chess());
   const [position, setPosition] = useState('start');
+  const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8080'}/api/chess/move`;
 
     useEffect(() => {
       startNewGame();
     }, []);
-
-
 
   const handleMove = async (sourceSquare, targetSquare) => {
     // Make the move on the front end first
@@ -61,6 +60,8 @@ const ChessGame: React.FC = () => {
     }
   };
 
+
+
     const startNewGame = async () => {
       await startEngine(); // Ensure the engine is started
       try {
@@ -78,18 +79,20 @@ const ChessGame: React.FC = () => {
       }
     };
 
-  return (
-  <div>
-    <Chessboard
-      width={320}
-      position={position} // Using FEN for position
-      onDrop={({ sourceSquare, targetSquare }) => {
-        handleMove(sourceSquare, targetSquare);
-      }}
-    />
-<Link href="/" className="mt-8 btn bg-accent hover:bg-red-700 text-white font-semibold rounded-full py-2 px-6">Back to home</Link>    </div>
-  );
-};
+ return (
+     <div>
+       <button onClick={startNewGame} className="btn-start">Start New Game</button>
+       <Chessboard
+         width={320}
+         position={position}
+         onDrop={({ sourceSquare, targetSquare }) => {
+           handleMove(sourceSquare, targetSquare);
+         }}
+       />
+       <Link href="/" className="mt-6 text-indigo-800 hover:underline">Back to home</Link>
+     </div>
+   );
+ };
 
 export default ChessGame;
 
