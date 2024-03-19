@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { Chess } from 'chess.js'
@@ -8,13 +8,35 @@ import { Chess } from 'chess.js'
 const Chessboard = dynamic(() => import('chessboardjsx'), { ssr: false });
 
 const ChessGame: React.FC = () => {
-  const [game, setGame] = useState<ChessInstance>(new Chess());
+  const [game, setGame] = useState(new Chess());
   const [position, setPosition] = useState('start');
   const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8080';
 
-    useEffect(() => {
-      startNewGame();
-    }, []);
+
+  const startEngine = async () => {
+        try {
+          await fetch(`${apiUrl}/api/chess/start`, { method: 'POST' });
+        } catch (error) {
+          console.error('Error starting engine:', error);
+        }
+      };
+
+  const startNewGame = useCallback(async () => {
+        await startEngine(); // Ensure the engine is started
+        try {
+          const response = await fetch(`${apiUrl}/api/chess/startNewGame`, {
+            method: 'POST',
+          });
+          if (!response.ok) {
+            throw new Error('Failed to start new game');
+          }
+          console.log('New game started');
+          setGame(new Chess()); // Reset the game state
+          setPosition('start'); // Reset the board position
+        } catch (error) {
+          console.error('Error starting new game:', error);
+        }
+      };
 
   const handleMove = async (sourceSquare, targetSquare) => {
     // Make the move on the front end first
@@ -60,30 +82,9 @@ const ChessGame: React.FC = () => {
     }
   };
 
-    const startEngine = async () => {
-      try {
-        await fetch(`${apiUrl}/api/chess/start`, { method: 'POST' });
-      } catch (error) {
-        console.error('Error starting engine:', error);
-      }
-    };
-
-    const startNewGame = async () => {
-      await startEngine(); // Ensure the engine is started
-      try {
-        const response = await fetch(`${apiUrl}/api/chess/startNewGame`, {
-          method: 'POST',
-        });
-        if (!response.ok) {
-          throw new Error('Failed to start new game');
-        }
-        console.log('New game started');
-        setGame(new Chess()); // Reset the game state
-        setPosition('start'); // Reset the board position
-      } catch (error) {
-        console.error('Error starting new game:', error);
-      }
-    };
+   useEffect(() => {
+        startNewGame();
+      }, [startNewGame]);
 
  return (
        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
