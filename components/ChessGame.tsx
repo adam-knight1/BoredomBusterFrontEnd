@@ -14,7 +14,7 @@ const ChessGame: React.FC = () => {
 
     const startEngine = useCallback(async () => {
         try {
-        await fetch(`${apiUrl}/api/chess/start`, { method: 'POST' });
+        await fetch(`${apiUrl}/api/chess/strt`, { method: 'POST' });
         } catch (error) {
         console.error('Error starting engine:', error);
         }
@@ -23,7 +23,7 @@ const ChessGame: React.FC = () => {
    const startNewGame = useCallback(async () => {
         await startEngine(); // Ensure the engine is started
         try {
-          const response = await fetch(`${apiUrl}/api/chess/startNewGame`, {
+          const response = await fetch(`${apiUrl}/api/chess/startNGame`, {
             method: 'POST',
           });
           if (!response.ok) {
